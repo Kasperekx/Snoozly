@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "pages/Home";
+import HomePage from "pages/home";
 import LoginPage from "../pages/Login";
 
 const Routing = () => {
