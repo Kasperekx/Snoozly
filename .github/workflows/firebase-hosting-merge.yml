@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm install -g yarn
+      - run: yarn install
       - run: yarn build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
@@ -19,10 +20,3 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_SNOOZLY_25D12 }}"
           channelId: live
           projectId: snoozly-25d12
- - run: 
-    - name: yarn install, build and test
-      run: |
-        yarn install
-        yarn build
-
-        
