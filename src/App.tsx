@@ -1,14 +1,11 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import Layout from "components/Layout";
-
 import Routing from "./routes/routing";
+import theme from "theme";
 
 function App() {
   return (
-    <ChakraProvider>
-      <Layout>
-        <Routing />
-      </Layout>
+    <ChakraProvider theme={theme}>
+      <Routing />
     </ChakraProvider>
   );
 }

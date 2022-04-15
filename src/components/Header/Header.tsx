@@ -7,12 +7,12 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
   useColorMode,
+  Link,
   Container,
 } from "@chakra-ui/react";
 import {
@@ -97,7 +97,7 @@ const Header = () => {
               fontSize={"sm"}
               fontWeight={400}
               variant={"link"}
-              href={"#"}
+              href={"login"}
             >
               Zaloguj się
             </Button>

@@ -56,6 +56,7 @@ export default function CallToActionWithVideo() {
             Snoozly is an application which will help you with managing time.
             <br />
             Stop waste time on social medias or videos with funny cats.
+            <br />
             Everything you need to be more productive is here.
           </Text>
           <Stack

@@ -7,6 +7,8 @@ const colors = {
   error: "#E11D48",
   white: "#ffffff",
   black: "#000000",
+  bg: "#ffffff",
+  grayBg: "gray.200",
 
   dark: {
     primary: "#ED8936",
@@ -17,6 +19,8 @@ const colors = {
     error: "#fc8181",
     white: "#ffffff",
     black: "#000000",
+    bg: "#1a202c",
+    grayBg: "gray.700",
   },
 
   orange: {

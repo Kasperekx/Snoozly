@@ -1,0 +1,16 @@
+.input-group {
+  margin-bottom: 25px;
+  position: relative;
+
+  &__tooltip {
+    position: absolute !important;
+    right: -30px;
+    top: 47%;
+    transform: translate(0, -50%);
+  }
+  &__tooltip-mobile {
+    display: none;
+    line-height: 1.4;
+    padding: 5px 0 0 5px;
+  }
+}
