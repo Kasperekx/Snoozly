@@ -9,7 +9,6 @@ import {
   Icon,
   Link,
   Popover,
-  PopoverContent,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
@@ -20,7 +19,6 @@ import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
-  ChevronRightIcon,
   MoonIcon,
   SunIcon,
 } from "@chakra-ui/icons";
@@ -73,8 +71,9 @@ const Header = () => {
             <Text
               textAlign={useBreakpointValue({ base: "center", md: "left" })}
               fontFamily={"heading"}
-              fontSize="2xl"
-              color={useColorModeValue("gray.800", "white")}
+              fontSize="3xl"
+              fontWeight="bold"
+              color={backgroundColor}
             >
               Snoozly
             </Text>
@@ -100,7 +99,7 @@ const Header = () => {
               variant={"link"}
               href={"#"}
             >
-              Sign In
+              Zaloguj się
             </Button>
             <Button
               display={{ base: "none", md: "inline-flex" }}
@@ -112,7 +111,7 @@ const Header = () => {
                 bg: "orange.300",
               }}
             >
-              Sign Up
+              Zarejestruj się
             </Button>
           </Stack>
         </Flex>
@@ -129,7 +128,6 @@ const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
 
   const linkHoverColor = useColorModeValue("gray.800", "white");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
     <Container maxW={"7xl"}>
@@ -238,19 +236,19 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Home",
+    label: "Strona Główna",
     href: "#",
   },
   {
-    label: "About Pomodoro",
+    label: "O pomodoro",
     href: "#",
   },
   {
-    label: "Testimonials",
+    label: "Referencje",
     href: "#",
   },
   {
-    label: "Contact",
+    label: "Kontakt",
     href: "#",
   },
 ];
