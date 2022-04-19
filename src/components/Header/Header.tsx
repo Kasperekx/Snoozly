@@ -23,9 +23,12 @@ import {
   SunIcon,
 } from "@chakra-ui/icons";
 import colors from "../../theme/base/colors";
+import { useAuth } from "services/auth/config";
+import CustomMenu from "components/CustomMenu/CustomMenu";
 
 const Header = () => {
   const { isOpen, onToggle } = useDisclosure();
+  const getUser = useAuth();
   const { colorMode, toggleColorMode } = useColorMode();
   const backgroundColor = useColorModeValue(
     colors.orange[400],
@@ -92,29 +95,36 @@ const Header = () => {
             <Button onClick={toggleColorMode}>
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </Button>
-            <Button
-              as={Link}
-              fontSize={"sm"}
-              fontWeight={400}
-              variant={"link"}
-              href={"login"}
-            >
-              Zaloguj się
-            </Button>
-            <Button
-              as={Link}
-              href="register"
-              display={{ base: "none", md: "inline-flex" }}
-              fontSize={"sm"}
-              fontWeight={600}
-              color={"white"}
-              bg={backgroundColor}
-              _hover={{
-                bg: "orange.300",
-              }}
-            >
-              Zarejestruj się
-            </Button>
+            {getUser ? (
+              <CustomMenu />
+            ) : (
+              <>
+                {" "}
+                <Button
+                  as={Link}
+                  fontSize={"sm"}
+                  fontWeight={400}
+                  variant={"link"}
+                  href={"login"}
+                >
+                  Zaloguj się
+                </Button>
+                <Button
+                  as={Link}
+                  href="register"
+                  display={{ base: "none", md: "inline-flex" }}
+                  fontSize={"sm"}
+                  fontWeight={600}
+                  color={"white"}
+                  bg={backgroundColor}
+                  _hover={{
+                    bg: "orange.300",
+                  }}
+                >
+                  Zarejestruj się
+                </Button>
+              </>
+            )}
           </Stack>
         </Flex>
 

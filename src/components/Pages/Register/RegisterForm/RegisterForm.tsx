@@ -7,6 +7,7 @@ import {
   useColorModeValue,
   useToast,
   VStack,
+  Link,
 } from "@chakra-ui/react";
 import CustomCheckbox from "components/CustomCheckbox/CustomCheckbox";
 import CustomInput from "components/Input/Input";
@@ -200,6 +201,15 @@ const RegisterForm = () => {
             Zarejestruj się
           </Button>
         </FormikProvider>
+        <Text mt="30px" fontSize="14px">
+          Wróc do{" "}
+          <Link
+            color={useColorModeValue(colors.primary, colors.secondary)}
+            href="/"
+          >
+            Snoozly
+          </Link>
+        </Text>
       </Box>
     </Container>
   );
