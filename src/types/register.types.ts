@@ -1,6 +1,5 @@
 export type RegisterValues = {
-  fullName: string;
+  fullname: string;
   email: string;
   password: string;
-  acceptTerms: boolean;
 };
