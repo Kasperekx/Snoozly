@@ -249,7 +249,7 @@ const LoginPage = () => {
         <Text mt="30px">
           Nie masz jeszcze konta?{" "}
           <Link
-            href="/"
+            href="register"
             color={useColorModeValue(colors.primary, colors.dark.primary)}
           >
             Zarejestruj się

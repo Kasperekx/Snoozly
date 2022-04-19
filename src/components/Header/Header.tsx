@@ -93,7 +93,7 @@ const Header = () => {
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </Button>
             <Button
-              as={"a"}
+              as={Link}
               fontSize={"sm"}
               fontWeight={400}
               variant={"link"}
@@ -102,6 +102,8 @@ const Header = () => {
               Zaloguj się
             </Button>
             <Button
+              as={Link}
+              href="register"
               display={{ base: "none", md: "inline-flex" }}
               fontSize={"sm"}
               fontWeight={600}

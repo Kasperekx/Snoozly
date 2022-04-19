@@ -28,6 +28,7 @@ export const repeatPassword = {
     "Hasła nie są identyczne"
   ),
 };
+
 export const terms = {
   acceptTerms: Yup.bool().oneOf(
     [true],
@@ -40,6 +41,7 @@ export const signUpSchema = Yup.object().shape({
   ...email,
   ...password,
   ...repeatPassword,
+  ...terms,
 });
 
 export const signInSchema = Yup.object().shape({
