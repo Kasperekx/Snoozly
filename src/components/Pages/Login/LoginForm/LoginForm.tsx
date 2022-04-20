@@ -50,6 +50,7 @@ const LoginForm = () => {
           navigate("/");
         })
         .catch((err) => {
+          setIsLoading(false);
           throw new Error(err);
         });
     },
