@@ -23,12 +23,13 @@ import {
   SunIcon,
 } from "@chakra-ui/icons";
 import colors from "../../theme/base/colors";
-import { useAuth } from "services/auth/config";
+import { useAuth } from "contexts/AuthContext";
 import CustomMenu from "components/CustomMenu/CustomMenu";
 
 const Header = () => {
   const { isOpen, onToggle } = useDisclosure();
-  const getUser = useAuth();
+  //@ts-ignore
+  const { currentUser } = useAuth();
   const { colorMode, toggleColorMode } = useColorMode();
   const backgroundColor = useColorModeValue(
     colors.orange[400],
@@ -95,7 +96,7 @@ const Header = () => {
             <Button onClick={toggleColorMode}>
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </Button>
-            {getUser ? (
+            {currentUser ? (
               <CustomMenu />
             ) : (
               <>

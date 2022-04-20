@@ -1,12 +1,10 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useEffect, useState } from "react";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import { getAuth } from "firebase/auth";
+
+// TODO: Add SDKs for Firebase products that you want to use
+
 const firebaseConfig = {
   apiKey: "AIzaSyAd9rFvnnHGrzp7FGmROzotrNK1msBj4iA",
   authDomain: "snoozly-25d12.firebaseapp.com",
@@ -17,22 +15,9 @@ const firebaseConfig = {
   measurementId: "G-SNT155J9C7",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-//custom hooks
-
-export function useAuth() {
-  const [currentUser, setCurrentUser] = useState();
-
-  useEffect(() => {
-    //@ts-ignore - !TODO types
-    const unsub = onAuthStateChanged(auth, (user) => setCurrentUser(user));
-    return unsub;
-  }, []);
-
-  return currentUser;
-}
+// type FirebaseUserState = User | null;
 
 export { auth };

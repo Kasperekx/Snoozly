@@ -1,17 +1,16 @@
 import {
   Button,
-  Icon,
   Menu,
   MenuButton,
   MenuDivider,
   MenuGroup,
   MenuItem,
   MenuList,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
 import { FaUser } from "react-icons/fa";
-import colors from "theme/base/colors";
+
+import { signOut } from "services/auth/login";
 
 const CustomMenu = () => {
   return (
@@ -20,18 +19,17 @@ const CustomMenu = () => {
         <FaUser />
       </MenuButton>
       <MenuList>
-        <MenuGroup title="Profile">
-          <MenuItem>My Account</MenuItem>
-          <MenuItem>Payments </MenuItem>
+        <MenuGroup title="Profil">
+          <MenuItem>Moje konto</MenuItem>
+          <MenuItem>Zadania</MenuItem>
         </MenuGroup>
         <MenuDivider />
-        <MenuGroup title="Help">
-          <MenuItem>Docs</MenuItem>
+        <MenuGroup title="Pomoc">
           <MenuItem>FAQ</MenuItem>
         </MenuGroup>
         <MenuDivider />
-        <MenuGroup title="Settings">
-          <MenuItem>Sign-Out</MenuItem>
+        <MenuGroup title="Ustawienia">
+          <MenuItem onClick={() => signOut()}>Wyloguj</MenuItem>
         </MenuGroup>
       </MenuList>
     </Menu>

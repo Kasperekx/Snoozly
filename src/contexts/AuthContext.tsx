@@ -1,0 +1,38 @@
+import { User } from "firebase/auth";
+import React, { useContext, useEffect, useState } from "react";
+import { auth } from "../services/auth/config";
+
+type Props = {
+  children?: React.ReactNode;
+};
+
+export function useAuth() {
+  return useContext(AuthContext);
+}
+
+const AuthContext = React.createContext<User | null>(null);
+
+export const AuthProvider: React.FC<Props> = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const unsub = auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+      setLoading(false);
+    });
+
+    return unsub;
+  }, []);
+
+  const value: {} = {
+    currentUser,
+  };
+
+  return (
+    //@ts-ignore TODO:
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
+};

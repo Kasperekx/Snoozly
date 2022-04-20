@@ -10,3 +10,7 @@ export async function signIn(values: LoginValues) {
   );
   console.log(res);
 }
+
+export async function signOut() {
+  await auth.signOut();
+}
