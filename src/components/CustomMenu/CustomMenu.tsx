@@ -6,6 +6,7 @@ import {
   MenuGroup,
   MenuItem,
   MenuList,
+  useToast,
 } from "@chakra-ui/react";
 import React from "react";
 import { FaUser } from "react-icons/fa";
@@ -13,6 +14,7 @@ import { FaUser } from "react-icons/fa";
 import { signOut } from "services/auth/login";
 
 const CustomMenu = () => {
+  const toast = useToast();
   return (
     <Menu>
       <MenuButton borderRadius="5px" as={Button} colorScheme="orange">
@@ -29,7 +31,21 @@ const CustomMenu = () => {
         </MenuGroup>
         <MenuDivider />
         <MenuGroup title="Ustawienia">
-          <MenuItem onClick={() => signOut()}>Wyloguj</MenuItem>
+          <MenuItem
+            onClick={() =>
+              signOut().then((res) => {
+                toast({
+                  title: "Zostałeś Wylogowany!",
+                  description: "Mamy nadzieję że wrócisz do nas! :)",
+                  status: "success",
+                  duration: 3000,
+                  isClosable: true,
+                });
+              })
+            }
+          >
+            Wyloguj
+          </MenuItem>
         </MenuGroup>
       </MenuList>
     </Menu>
