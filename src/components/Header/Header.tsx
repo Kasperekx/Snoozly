@@ -21,6 +21,7 @@ import {
   ChevronDownIcon,
   MoonIcon,
   SunIcon,
+  TimeIcon,
 } from "@chakra-ui/icons";
 import colors from "../../theme/base/colors";
 import { useAuth } from "contexts/AuthContext";
@@ -28,7 +29,7 @@ import CustomMenu from "components/CustomMenu/CustomMenu";
 
 const Header = () => {
   const { isOpen, onToggle } = useDisclosure();
-  //@ts-ignore
+  // @ts-ignore
   const { currentUser } = useAuth();
   const { colorMode, toggleColorMode } = useColorMode();
   const backgroundColor = useColorModeValue(
@@ -89,10 +90,17 @@ const Header = () => {
 
           <Stack
             flex={{ base: 1, md: 0 }}
-            justify={"flex-end"}
-            direction={"row"}
-            spacing={6}
+            justify="flex-end"
+            alignItems="center"
+            direction="row"
+            spacing="6"
           >
+            {currentUser && (
+              <Button>
+                <TimeIcon />
+              </Button>
+            )}
+
             <Button onClick={toggleColorMode}>
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </Button>
@@ -122,7 +130,7 @@ const Header = () => {
                     bg: "orange.300",
                   }}
                 >
-                  Zarejestruj się
+                  Zarejestruj Się
                 </Button>
               </>
             )}

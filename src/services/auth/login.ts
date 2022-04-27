@@ -3,12 +3,11 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./config";
 
 export async function signIn(values: LoginValues) {
-  const res = await signInWithEmailAndPassword(
-    auth,
-    values.email,
-    values.password
+  await signInWithEmailAndPassword(auth, values.email, values.password).then(
+    (response) => {
+      localStorage.setItem("Auth Token", response.user.refreshToken);
+    }
   );
-  console.log(res);
 }
 
 export async function signOut() {

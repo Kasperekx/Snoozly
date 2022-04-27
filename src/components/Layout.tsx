@@ -9,8 +9,7 @@ type Props = {
 
 const Wrapper = styled.div`
   height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+  width: 100%;
   margin: 0;
   padding: 0;
 `;

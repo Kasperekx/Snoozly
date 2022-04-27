@@ -36,3 +36,8 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+// export const useAuthState = () => {
+//   const auth = useContext(AuthContext);
+//   return { ...auth, isAuthenticated: auth?.email != null };
+// };
