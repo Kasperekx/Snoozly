@@ -48,3 +48,7 @@ export const signInSchema = Yup.object().shape({
   ...email,
   ...password,
 });
+
+export const changeEmailSchema = Yup.object().shape({
+  ...email,
+});
