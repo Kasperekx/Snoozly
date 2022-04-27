@@ -17,7 +17,7 @@ const Routing = () => {
         <Route path="/register" element={<Register />} />
         <Route
           path="/panel"
-          element={currentUser ? <UserPanel /> : <HomePage />}
+          element={currentUser ? <UserPanel /> : <LoginPage />}
         />
       </Routes>
     </BrowserRouter>
