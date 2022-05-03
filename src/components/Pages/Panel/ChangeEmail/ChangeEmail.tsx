@@ -6,12 +6,11 @@ import {
   AccordionPanel,
   Box,
   Button,
-  Input,
   useColorModeValue,
   useToast,
 } from "@chakra-ui/react";
 import CustomInput from "components/Input/Input";
-import { error } from "console";
+
 import { Field, FormikProvider, useFormik } from "formik";
 import React, { useState } from "react";
 import { changeEmail } from "services/auth/changeProfileData";
@@ -29,15 +28,15 @@ const ChangeEmail = () => {
     enableReinitialize: true,
     validationSchema: changeEmailSchema,
     validateOnMount: true,
-    validateOnBlur: true,
+    validateOnChange: true,
     onSubmit: (values) => {
       setIsLoading(true);
       changeEmail(values)
         .then((response) => {
           setIsLoading(false);
           toast({
-            title: "Udało się zmienić email",
-            description: "Pamiętaj aby logować się przy uyciu nowego emailu",
+            title: "Udało się zalogować",
+            description: "Pamiętaj aby się zalogować przy użyciu nowego maila",
             duration: 3000,
             isClosable: true,
             status: "success",

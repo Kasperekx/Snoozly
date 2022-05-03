@@ -43,7 +43,7 @@ const Header = () => {
           bg={useColorModeValue("white", "gray.800")}
           color={useColorModeValue("gray.600", "white")}
           minH={"60px"}
-          py={{ base: 2 }}
+          py="4"
           px={{ base: 4 }}
           borderBottom={1}
           borderStyle={"solid"}
@@ -147,7 +147,6 @@ const Header = () => {
 
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
-
   const linkHoverColor = useColorModeValue("gray.800", "white");
 
   return (
@@ -201,7 +200,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
   return (
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
-        py={2}
+        py="2"
         as={Link}
         href={href ?? "#"}
         justify={"space-between"}

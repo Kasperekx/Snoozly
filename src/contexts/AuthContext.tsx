@@ -14,7 +14,7 @@ const AuthContext = React.createContext<User | null>(null);
 
 export const AuthProvider: React.FC<Props> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const unsub = auth.onAuthStateChanged((user) => {

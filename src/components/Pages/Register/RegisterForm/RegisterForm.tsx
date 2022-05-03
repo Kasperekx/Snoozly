@@ -31,6 +31,7 @@ const RegisterForm = () => {
       password: "",
       acceptTerms: false,
     },
+
     enableReinitialize: true,
     validationSchema: signUpSchema,
     validateOnMount: true,

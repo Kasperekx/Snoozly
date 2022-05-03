@@ -53,6 +53,7 @@ const UserPanel = () => {
                 <Box w="100%">
                   <ImagePanel />
                 </Box>
+
                 <Box w="100%">
                   <Box boxShadow="base" maxW="600px" mb="30">
                     <Accordion defaultIndex={[0]} allowMultiple>
