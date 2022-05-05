@@ -29,6 +29,13 @@ export const repeatPassword = {
   ),
 };
 
+export const displayName = {
+  displayName: Yup.string()
+  .min(1, "Podaj nową nazwę użytkownika")
+  .max(20, "Nazwa użytkownika jest za długa")
+  .required("Podaj nową nazwę użytkownika")
+}
+
 export const terms = {
   acceptTerms: Yup.bool().oneOf(
     [true],
@@ -52,3 +59,7 @@ export const signInSchema = Yup.object().shape({
 export const changeEmailSchema = Yup.object().shape({
   ...email,
 });
+
+export const changeNameUser = Yup.object().shape({
+  ...displayName
+})

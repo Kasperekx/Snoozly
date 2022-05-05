@@ -15,10 +15,12 @@ import {
   TabPanel,
   TabPanels,
   Tabs,
+  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import Layout from "components/Layout";
 import ChangeEmail from "components/Pages/Panel/ChangeEmail/ChangeEmail";
+import ChangeName from "components/Pages/Panel/ChangeName/ChangeName";
 import ImagePanel from "components/Pages/Panel/ImagePanel";
 import { useAuth } from "contexts/AuthContext";
 import React from "react";
@@ -27,7 +29,7 @@ import colors from "theme/base/colors";
 const UserPanel = () => {
   //@ts-ignore TODO:
   const { currentUser } = useAuth();
-  console.log(currentUser.email);
+  console.log(currentUser);
 
   return (
     <Layout>
@@ -46,6 +48,7 @@ const UserPanel = () => {
                   borderRadius="50%"
                   src="https://bit.ly/dan-abramov"
                 />
+                <Text>Nazwa użytkownika: {currentUser.displayName}</Text>
               </Box>
             </TabPanel>
             <TabPanel>
@@ -56,41 +59,7 @@ const UserPanel = () => {
 
                 <Box w="100%">
                   <Box boxShadow="base" maxW="600px" mb="30">
-                    <Accordion defaultIndex={[0]} allowMultiple>
-                      <AccordionItem>
-                        <h2>
-                          <AccordionButton>
-                            <Box flex="1" textAlign="left">
-                              Zmień nazwę użytkownika
-                            </Box>
-                            <AccordionIcon />
-                          </AccordionButton>
-                        </h2>
-
-                        <AccordionPanel>
-                          <Box mt="10px">
-                            <h3>Nowa Nazwa</h3>
-                            <Input mt="20px" maxW="300px" />
-                          </Box>
-                          <Button
-                            display={{ base: "none", md: "inline-flex" }}
-                            fontSize="md"
-                            mt="30px"
-                            fontWeight="600"
-                            color={"white"}
-                            bg={useColorModeValue(
-                              colors.orange[400],
-                              colors.orange[500]
-                            )}
-                            _hover={{
-                              bg: "orange.300",
-                            }}
-                          >
-                            Zmień nazwę
-                          </Button>
-                        </AccordionPanel>
-                      </AccordionItem>
-                    </Accordion>
+                    <ChangeName />
                   </Box>
                   <Box boxShadow="base" maxW="600px">
                     <Accordion defaultIndex={[0]} allowMultiple>

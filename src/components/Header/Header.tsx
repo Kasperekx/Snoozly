@@ -30,7 +30,7 @@ import CustomMenu from "components/CustomMenu/CustomMenu";
 const Header = () => {
   const { isOpen, onToggle } = useDisclosure();
   // @ts-ignore
-  const {currentUser} = useAuth()
+  const { currentUser } = useAuth();
   const { colorMode, toggleColorMode } = useColorMode();
   const backgroundColor = useColorModeValue(
     colors.orange[400],
@@ -42,7 +42,7 @@ const Header = () => {
         <Flex
           bg={useColorModeValue("white", "gray.800")}
           color={useColorModeValue("gray.600", "white")}
-          minH={"60px"}
+          minH="60px"
           py="4"
           px={{ base: 4 }}
           borderBottom={1}
@@ -248,7 +248,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
 };
 
 interface NavItem {
-  label: string,
+  label: string;
   subLabel?: string;
   children?: Array<NavItem>;
   href?: string;

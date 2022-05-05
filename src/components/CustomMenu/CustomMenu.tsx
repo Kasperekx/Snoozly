@@ -12,7 +12,6 @@ import {
 import React from "react";
 import { FaUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
 import { signOut } from "services/auth/login";
 
 const CustomMenu = () => {
@@ -27,6 +26,7 @@ const CustomMenu = () => {
         duration: 3000,
         isClosable: true,
       });
+
       navigate("/");
     });
   };
