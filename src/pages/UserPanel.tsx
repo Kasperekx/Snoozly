@@ -1,30 +1,22 @@
 import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
   Box,
-  Button,
   Container,
   Flex,
   Image,
-  Input,
   Tab,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
   Text,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import Layout from "components/Layout";
 import ChangeEmail from "components/Pages/Panel/ChangeEmail/ChangeEmail";
 import ChangeName from "components/Pages/Panel/ChangeName/ChangeName";
+import ChangePassword from "components/Pages/Panel/ChangePassword/ChangePassword";
 import ImagePanel from "components/Pages/Panel/ImagePanel";
 import { useAuth } from "contexts/AuthContext";
 import React from "react";
-import colors from "theme/base/colors";
 
 const UserPanel = () => {
   //@ts-ignore TODO:
@@ -54,53 +46,11 @@ const UserPanel = () => {
             <TabPanel>
               <Flex mt="50px" justifyContent="space-between" mb="150px">
                 <Box w="100%">
-                  <ImagePanel />
-                </Box>
-
-                <Box w="100%">
-                  <Box boxShadow="base" maxW="600px" mb="30">
+                  <Box boxShadow="base" maxW="100%" mb="30">
                     <ChangeName />
                   </Box>
                   <Box boxShadow="base" maxW="600px">
-                    <Accordion defaultIndex={[0]} allowMultiple>
-                      <AccordionItem>
-                        <h2>
-                          <AccordionButton>
-                            <Box flex="1" textAlign="left">
-                              Zmień hasło
-                            </Box>
-                            <AccordionIcon />
-                          </AccordionButton>
-                        </h2>
-
-                        <AccordionPanel>
-                          <Box mt="10px">
-                            <h3>Nowe Hasło</h3>
-                            <Input mt="20px" maxW="300px" />
-                          </Box>
-                          <Box mt="30px">
-                            <h3>Powtórz Hasło</h3>
-                            <Input mt="20px" maxW="300px" />
-                          </Box>
-                          <Button
-                            display={{ base: "none", md: "inline-flex" }}
-                            fontSize="md"
-                            mt="30px"
-                            fontWeight="600"
-                            color={"white"}
-                            bg={useColorModeValue(
-                              colors.orange[400],
-                              colors.orange[500]
-                            )}
-                            _hover={{
-                              bg: "orange.300",
-                            }}
-                          >
-                            Zmień hasło
-                          </Button>
-                        </AccordionPanel>
-                      </AccordionItem>
-                    </Accordion>
+                    <ChangePassword />
                   </Box>
                   <ChangeEmail />
                 </Box>

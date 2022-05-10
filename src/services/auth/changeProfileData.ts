@@ -1,5 +1,5 @@
-import { ChangeEmailValues, ChangeUserNameValues } from "types/userPanel.types";
-import { getAuth, updateEmail, updateProfile } from "firebase/auth";
+import { ChangeEmailValues, ChangePasswordValues, ChangeUserNameValues } from "types/userPanel.types";
+import { getAuth, updateEmail, updatePassword, updateProfile } from "firebase/auth";
 
 const auth = getAuth();
 
@@ -14,3 +14,8 @@ export async function changeName(values: ChangeUserNameValues ) {
     displayName: values.displayName
   })
 }
+
+export async function changePassword(values: ChangePasswordValues) { 
+  //@ts-ignore TODO:
+  await updatePassword(auth.currentUser, values.password )
+} 

@@ -13,32 +13,30 @@ import CustomInput from "components/Input/Input";
 
 import { Field, FormikProvider, useFormik } from "formik";
 import React, { useState } from "react";
-import { changeName } from "services/auth/changeProfileData";
+import { changePassword } from "services/auth/changeProfileData";
 import colors from "theme/base/colors";
-import { ChangeUserNameValues } from "types/userPanel.types";
-import { changeNameUser } from "utils/validation";
+import { ChangePasswordValues } from "types/userPanel.types";
+import { changePasswordSchema } from "utils/validation";
 
-const ChangeName = () => {
+const ChangePassword = () => {
   const [isLoading, setIsLoading] = useState(false);
-
   const toast = useToast();
-  const formik = useFormik<ChangeUserNameValues>({
+  const formik = useFormik<ChangePasswordValues>({
     initialValues: {
-      displayName: "",
+      password: "",
     },
     enableReinitialize: true,
-    validationSchema: changeNameUser,
+    validationSchema: changePasswordSchema,
     validateOnMount: true,
     validateOnChange: true,
     onSubmit: (values) => {
       setIsLoading(true);
-      changeName(values)
+      changePassword(values)
         .then((response) => {
           setIsLoading(false);
           toast({
-            title: "Hurra! Udało się zmienić nazwę użytkownika.",
-            description:
-              "Od teraz Twoja nazwa użytkownika będzie wyświetlana inczaje",
+            title: "Udało się zmienić hasło",
+            description: "Pamiętaj aby zalogować się przy użyciu nowego hasło",
             duration: 3000,
             isClosable: true,
             status: "success",
@@ -47,8 +45,8 @@ const ChangeName = () => {
         .catch((err) => {
           setIsLoading(false);
           toast({
-            title: "Nie udało się zmienić nazwy użytkownika",
-            description: "Coś poszło nie tak...... Spróbuj ponownie",
+            title: "Nie udało się zmienić hasła",
+            description: "Coś poszło nie tak......",
             duration: 3000,
             isClosable: true,
             status: "error",
@@ -64,7 +62,7 @@ const ChangeName = () => {
           <h2>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                Zmień nazwę użytkownika
+                Zmień Hasło
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -73,16 +71,29 @@ const ChangeName = () => {
           <AccordionPanel>
             <Box mt="10px">
               <FormikProvider value={formik}>
-                <Field name="displayName">
+                <Field name="password">
                   {({ field, form }: any) => (
                     <CustomInput
-                      id="displayName"
-                      name="displayName"
-                      type="text"
-                      label="Nowa nazwa"
+                      id="password"
+                      name="password"
+                      type="password"
+                      label="Nowe hasło"
                       form={form}
                       field={field}
-                      variant="floatingDarkBg"
+                      showButton
+                    />
+                  )}
+                </Field>
+                <Field name="repeatPassword">
+                  {({ field, form }: any) => (
+                    <CustomInput
+                      id="repeatPassword"
+                      name="repeatPassword"
+                      type="password"
+                      label="Powtórz nowe hasło"
+                      form={form}
+                      field={field}
+                      showButton
                     />
                   )}
                 </Field>
@@ -99,7 +110,7 @@ const ChangeName = () => {
                     bg: "orange.300",
                   }}
                 >
-                  Zmień Nazwę
+                  Zmień Hasło
                 </Button>
               </FormikProvider>
             </Box>
@@ -110,4 +121,4 @@ const ChangeName = () => {
   );
 };
 
-export default ChangeName;
+export default ChangePassword;

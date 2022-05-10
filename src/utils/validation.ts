@@ -63,3 +63,8 @@ export const changeEmailSchema = Yup.object().shape({
 export const changeNameUser = Yup.object().shape({
   ...displayName
 })
+
+export const changePasswordSchema = Yup.object().shape({
+  ...password,
+  ...repeatPassword,
+});

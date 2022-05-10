@@ -3,9 +3,11 @@ export type ChangeEmailValues = {
 };
 
 export type ChangePasswordValues = {
-  password: string;
+  password: string
 };
 
 export type ChangeUserNameValues = {
   displayName: string;
 };
+
+

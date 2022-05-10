@@ -21,7 +21,7 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
       setCurrentUser(user);
       setLoading(false);
     });
-
+    setLoading(true);
     return unsub;
   }, []);
 
