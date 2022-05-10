@@ -14,7 +14,6 @@ import Layout from "components/Layout";
 import ChangeEmail from "components/Pages/Panel/ChangeEmail/ChangeEmail";
 import ChangeName from "components/Pages/Panel/ChangeName/ChangeName";
 import ChangePassword from "components/Pages/Panel/ChangePassword/ChangePassword";
-import ImagePanel from "components/Pages/Panel/ImagePanel";
 import { useAuth } from "contexts/AuthContext";
 import React from "react";
 
