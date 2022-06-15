@@ -21,15 +21,15 @@ export default function CallToActionWithVideo() {
     <Container maxW={"7xl"}>
       <Stack
         align="center"
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
-        direction={{ base: "column", md: "row" }}
+        spacing={{base: 8, md: 10}}
+        py={{base: 20, md: 28}}
+        direction={{base: "column", md: "row"}}
       >
-        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+        <Stack flex={1} spacing={{base: 5, md: 10}}>
           <Heading
             lineHeight="1.1"
             fontWeight="600"
-            fontSize={{ base: "3xl", sm: "4xl", lg: "6xl" }}
+            fontSize={{base: "3xl", sm: "4xl", lg: "6xl"}}
           >
             <Text
               as={"span"}
@@ -47,21 +47,21 @@ export default function CallToActionWithVideo() {
             >
               Snoozly,
             </Text>
-            <br />
+            <br/>
             <Text as="span" color={backgroundColor}>
               just focus!
             </Text>
           </Heading>
           <Text color={"gray.500"}>
             Snoozly is an application which will help you with managing time.
-            <br />
+            <br/>
             Stop waste time on social medias or videos with funny cats.
-            <br />
+            <br/>
             Everything you need to be more productive is here.
           </Text>
           <Stack
-            spacing={{ base: 4, sm: 6 }}
-            direction={{ base: "column", sm: "row" }}
+            spacing={{base: 4, sm: 6}}
+            direction={{base: "column", sm: "row"}}
           >
             <Button
               rounded={"md"}
@@ -69,7 +69,7 @@ export default function CallToActionWithVideo() {
               fontWeight={"normal"}
               px={6}
               bg={backgroundColor}
-              _hover={{ bg: backgroundColor }}
+              _hover={{bg: backgroundColor}}
             >
               Get started
             </Button>
@@ -117,13 +117,13 @@ export default function CallToActionWithVideo() {
                 transform="translate(-262.16498 -134.02654)"
                 fill="#ccc"
               />
-              <circle cx="278.99773" cy="260.8659" r="215" fill="#e6e6e6" />
+              <circle cx="278.99773" cy="260.8659" r="215" fill="#e6e6e6"/>
               <path
                 d="M726.16271,394.89244a184.74377,184.74377,0,0,1-74.67,148.51c-1.55,1.16-3.13,2.29-4.72,3.39a185.03127,185.03127,0,0,1-211.22,0c-1.59-1.1-3.17-2.23-4.72-3.39a185.01966,185.01966,0,0,1,0-297.02c1.55-1.16,3.13-2.29,4.72-3.39a185.0315,185.0315,0,0,1,211.22,0c1.59,1.1,3.17,2.23,4.72,3.39A184.74369,184.74369,0,0,1,726.16271,394.89244Z"
                 transform="translate(-262.16498 -134.02654)"
                 fill="#fff"
               />
-              <circle cx="278.99773" cy="260.8659" r="169" fill="#f9a826" />
+              <circle cx="278.99773" cy="260.8659" r="169" fill="#f9a826"/>
               <path
                 d="M541.60362,226.36486c-2.562,0-5.10815.067-7.64221.1798a168.99467,168.99467,0,0,1-7.15649,337.168c4.87781.42328,9.81116.65223,14.7987.65223a169,169,0,0,0,0-338Z"
                 transform="translate(-262.16498 -134.02654)"
@@ -189,7 +189,7 @@ export default function CallToActionWithVideo() {
                 transform="translate(-262.16498 -134.02654)"
                 fill="#3f3d56"
               />
-              <circle cx="278.99773" cy="260.8659" r="13" fill="#ccc" />
+              <circle cx="278.99773" cy="260.8659" r="13" fill="#ccc"/>
               <path
                 d="M451.61885,169.47127c-19.95483,31.3725-50.40146,52.19272-87.94977,65.87042a7.05892,7.05892,0,0,1-9.88158-1.41838l0,0c-20.3959-27.23248-15.79051-66.15312,11.1278-86.96189a62.06846,62.06846,0,0,1,87.55785,11.87509l.56413.75322A7.05892,7.05892,0,0,1,451.61885,169.47127Z"
                 transform="translate(-262.16498 -134.02654)"
@@ -210,11 +210,11 @@ export default function CallToActionWithVideo() {
                 transform="translate(-262.16498 -134.02654)"
                 fill="#e6e6e6"
               />
-              <circle cx="394.99773" cy="508.8659" r="17" fill="#e6e6e6" />
-              <circle cx="406.99773" cy="73.8659" r="17" fill="#e6e6e6" />
-              <circle cx="277.99773" cy="33.8659" r="17" fill="#e6e6e6" />
-              <circle cx="154.99773" cy="71.8659" r="17" fill="#e6e6e6" />
-              <circle cx="165.99773" cy="508.8659" r="17" fill="#e6e6e6" />
+              <circle cx="394.99773" cy="508.8659" r="17" fill="#e6e6e6"/>
+              <circle cx="406.99773" cy="73.8659" r="17" fill="#e6e6e6"/>
+              <circle cx="277.99773" cy="33.8659" r="17" fill="#e6e6e6"/>
+              <circle cx="154.99773" cy="71.8659" r="17" fill="#e6e6e6"/>
+              <circle cx="165.99773" cy="508.8659" r="17" fill="#e6e6e6"/>
               <path
                 d="M643.82785,490.73326a8.51615,8.51615,0,0,0,12.95041,1.67682l26.67551,14.29343-1.43061-15.66135L656.911,479.86993a8.56232,8.56232,0,0,0-13.08312,10.86333Z"
                 transform="translate(-262.16498 -134.02654)"

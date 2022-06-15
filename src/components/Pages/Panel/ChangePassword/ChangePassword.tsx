@@ -56,7 +56,7 @@ const ChangePassword = () => {
     },
   });
   return (
-    <Box boxShadow="base" mt="30px" maxW="600px">
+    <Box boxShadow="base" mt="30px" maxW="1o0%">
       <Accordion defaultIndex={[0]} allowMultiple>
         <AccordionItem>
           <h2>

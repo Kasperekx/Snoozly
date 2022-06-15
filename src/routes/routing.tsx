@@ -4,6 +4,7 @@ import LoginPage from "../pages/Login";
 import Register from "pages/Register";
 import UserPanel from "pages/UserPanel";
 import { useAuth } from "contexts/AuthContext";
+import Tasks from "../pages/Tasks";
 
 const Routing = () => {
   // @ts-ignore TODO:
@@ -18,6 +19,10 @@ const Routing = () => {
         <Route
           path="/panel"
           element={currentUser ? <UserPanel /> : <LoginPage />}
+        />
+        <Route
+          path="/tasks"
+          element={currentUser ? <Tasks /> : <LoginPage />}
         />
       </Routes>
     </BrowserRouter>

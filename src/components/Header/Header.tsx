@@ -96,7 +96,7 @@ const Header = () => {
             spacing="6"
           >
             {currentUser && (
-              <Button>
+              <Button as={Link} href="/tasks">
                 <TimeIcon />
               </Button>
             )}

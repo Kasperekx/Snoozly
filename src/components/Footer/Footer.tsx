@@ -10,14 +10,6 @@ import {
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { ReactNode } from "react";
 
-//For Future
-
-// const Logo = (props: any) => {
-//   return (
-
-//   );
-// };
-
 const SocialButton = ({
   children,
   label,

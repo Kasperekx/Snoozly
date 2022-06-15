@@ -56,7 +56,7 @@ const ChangeEmail = () => {
     },
   });
   return (
-    <Box boxShadow="base" mt="30px" maxW="600px">
+    <Box boxShadow="base" mt="30px" maxW="100%">
       <Accordion defaultIndex={[0]} allowMultiple>
         <AccordionItem>
           <h2>

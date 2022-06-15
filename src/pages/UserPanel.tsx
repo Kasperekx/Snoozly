@@ -16,6 +16,7 @@ import ChangeName from "components/Pages/Panel/ChangeName/ChangeName";
 import ChangePassword from "components/Pages/Panel/ChangePassword/ChangePassword";
 import { useAuth } from "contexts/AuthContext";
 import React from "react";
+import ImagePanel from "../components/Pages/Panel/ImagePanel";
 
 const UserPanel = () => {
   //@ts-ignore TODO:
@@ -39,16 +40,21 @@ const UserPanel = () => {
                   borderRadius="50%"
                   src="https://bit.ly/dan-abramov"
                 />
-                <Text>Nazwa użytkownika: {currentUser.displayName}</Text>
+                <Text mt="30px">
+                  Nazwa użytkownika: {currentUser.displayName}
+                </Text>
               </Box>
             </TabPanel>
             <TabPanel>
+              {/*<Box mt="50px">*/}
+              {/*  <ImagePanel />*/}
+              {/*</Box>*/}
               <Flex mt="50px" justifyContent="space-between" mb="150px">
                 <Box w="100%">
                   <Box boxShadow="base" maxW="100%" mb="30">
                     <ChangeName />
                   </Box>
-                  <Box boxShadow="base" maxW="600px">
+                  <Box boxShadow="base" maxW="100%">
                     <ChangePassword />
                   </Box>
                   <ChangeEmail />
