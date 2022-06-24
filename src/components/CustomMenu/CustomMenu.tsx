@@ -7,17 +7,12 @@ import {
   MenuGroup,
   MenuItem,
   MenuList,
-  useToast,
 } from "@chakra-ui/react";
 import React from "react";
 import { FaUser } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 import { signOut } from "services/auth/login";
 
 const CustomMenu = () => {
-  const toast = useToast();
-  const navigate = useNavigate();
-
   return (
     <Menu>
       <MenuButton borderRadius="5px" as={Button} colorScheme="orange">
