@@ -17,19 +17,7 @@ import { signOut } from "services/auth/login";
 const CustomMenu = () => {
   const toast = useToast();
   const navigate = useNavigate();
-  const signingOut = () => {
-    signOut().then((res) => {
-      toast({
-        title: "Zostałeś Wylogowany!",
-        description: "Mamy nadzieję że szybko do nas wrócisz :)",
-        status: "success",
-        duration: 3000,
-        isClosable: true,
-      });
 
-      navigate("/");
-    });
-  };
   return (
     <Menu>
       <MenuButton borderRadius="5px" as={Button} colorScheme="orange">

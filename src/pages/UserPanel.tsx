@@ -16,7 +16,6 @@ import ChangeName from "components/Pages/Panel/ChangeName/ChangeName";
 import ChangePassword from "components/Pages/Panel/ChangePassword/ChangePassword";
 import { useAuth } from "contexts/AuthContext";
 import React from "react";
-import ImagePanel from "../components/Pages/Panel/ImagePanel";
 
 const UserPanel = () => {
   //@ts-ignore TODO:
@@ -46,9 +45,6 @@ const UserPanel = () => {
               </Box>
             </TabPanel>
             <TabPanel>
-              {/*<Box mt="50px">*/}
-              {/*  <ImagePanel />*/}
-              {/*</Box>*/}
               <Flex mt="50px" justifyContent="space-between" mb="150px">
                 <Box w="100%">
                   <Box boxShadow="base" maxW="100%" mb="30">

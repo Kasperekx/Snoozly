@@ -11,7 +11,7 @@ import colors from "../../../../theme/base/colors";
 const Timer = () => {
   const [progress, setProgress] = useState(0);
   const [time, setTime] = useState(1500);
-  const [initTime, setInitTime] = useState(time);
+  const [initTime] = useState(time);
   const [isActive, setIsActive] = useState(false);
 
   const activateTimer = () => {
