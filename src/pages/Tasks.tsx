@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Container} from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import Timer from "../components/Pages/Tasks/Timer/Timer";
 import Layout from "../components/Layout";
 import TaskList from "components/Pages/Tasks/TaskList/TaskList";
@@ -15,10 +15,10 @@ const Tasks = () => {
         alignItems="center"
       >
         <Box mt="200px">
-          <Timer/>
+          <Timer />
         </Box>
         <Box mt="200px">
-          <TaskList/>
+          <TaskList />
         </Box>
       </Container>
     </Layout>

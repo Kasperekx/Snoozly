@@ -10,7 +10,7 @@ import colors from "../../../../theme/base/colors";
 
 const Timer = () => {
   const [progress, setProgress] = useState(0);
-  const [time, setTime] = useState(300);
+  const [time, setTime] = useState(1500);
   const [initTime, setInitTime] = useState(time);
   const [isActive, setIsActive] = useState(false);
 
@@ -24,6 +24,10 @@ const Timer = () => {
     setIsActive(false);
   };
 
+  const breakTime = () => {
+    setTime(300);
+  };
+
   useEffect(() => {
     if (isActive && time > 0) {
       const interval = setInterval(() => {
@@ -33,7 +37,7 @@ const Timer = () => {
 
       return () => clearInterval(interval);
     }
-  }, [time, isActive, progress]);
+  }, [time, isActive, progress, initTime]);
 
   const getTime = (time: number) => {
     const min = Math.floor(time / 60);
@@ -68,6 +72,15 @@ const Timer = () => {
       >
         <Button mt="30px" padding="15px 25px" onClick={activateTimer}>
           {isActive ? "STOP" : "START"}
+        </Button>
+        <Button
+          mt="30px"
+          ml="15px"
+          mr="15px"
+          padding="15px 25px"
+          onClick={breakTime}
+        >
+          PRZERWA
         </Button>
         <Button mt="30px" padding="15px 25px" onClick={resetTime}>
           RESET

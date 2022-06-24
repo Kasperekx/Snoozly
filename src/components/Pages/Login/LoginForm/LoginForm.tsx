@@ -63,7 +63,7 @@ const LoginForm = () => {
       justifyContent="center"
       flexDirection="column"
     >
-      <Box mt="-150px">
+      <Box mt="0px">
         <Box mb="50px">
           <LoginImage />
         </Box>
@@ -151,7 +151,7 @@ const LoginForm = () => {
           </Button>
         </FormikProvider>
         <Text mt="30px">
-          Nie masz jeszcze konta?{" "}
+          Nie masz jeszcze konta?
           <Link
             href="register"
             color={useColorModeValue(colors.primary, colors.dark.primary)}

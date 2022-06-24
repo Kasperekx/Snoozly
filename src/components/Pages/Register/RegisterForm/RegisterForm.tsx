@@ -84,7 +84,7 @@ const RegisterForm = () => {
       alignItems="center"
       justifyContent="center"
     >
-      <Box mt="-150px">
+      <Box mt="0px">
         <Heading mb="30px">
           Dołącz do{" "}
           <Text

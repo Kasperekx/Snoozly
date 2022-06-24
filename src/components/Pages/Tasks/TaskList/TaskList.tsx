@@ -16,7 +16,7 @@ const TaskList = () => {
   const [task, setTask] = useState("");
   const [tasks, setTasks] = useState<any>([]);
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (task !== "") {
       await addDoc(collection(db, "tasks"), {

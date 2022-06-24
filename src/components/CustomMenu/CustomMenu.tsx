@@ -48,7 +48,7 @@ const CustomMenu = () => {
         </MenuGroup>
         <MenuDivider />
         <MenuGroup title="Ustawienia">
-          <MenuItem onClick={() => signingOut()}>Wyloguj</MenuItem>
+          <MenuItem onClick={() => signOut()}>Wyloguj</MenuItem>
         </MenuGroup>
       </MenuList>
     </Menu>
