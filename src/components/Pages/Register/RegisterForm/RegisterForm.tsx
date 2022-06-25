@@ -7,7 +7,6 @@ import {
   useColorModeValue,
   useToast,
   VStack,
-  Link,
 } from "@chakra-ui/react";
 import CustomCheckbox from "components/CustomCheckbox/CustomCheckbox";
 import CustomInput from "components/Input/Input";
@@ -19,6 +18,7 @@ import { signUp } from "services/auth/register";
 import colors from "theme/base/colors";
 import { RegisterValues } from "types/register.types";
 import { signUpSchema } from "utils/validation";
+import { Link } from "react-router-dom";
 
 const RegisterForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -206,7 +206,7 @@ const RegisterForm = () => {
           Wróc do{" "}
           <Link
             color={useColorModeValue(colors.primary, colors.secondary)}
-            href="/"
+            to="/"
           >
             Snoozly
           </Link>

@@ -4,7 +4,6 @@ import {
   Box,
   VStack,
   Button,
-  Link,
   Text,
   Heading,
   useToast,
@@ -20,6 +19,7 @@ import LoginImage from "components/Pages/Login/LoginImage/LoginImage";
 import { signIn } from "services/auth/login";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -132,12 +132,7 @@ const LoginForm = () => {
             )}
           </Field>
           <div className="login-page__reminder">
-            <Link
-              fontSize="14px"
-              color={useColorModeValue(colors.primary, colors.dark.primary)}
-            >
-              Nie pamiętam hasła
-            </Link>
+            <Link to="#">Nie pamiętam hasła</Link>
           </div>
           <Button
             variant="solid"
@@ -150,13 +145,15 @@ const LoginForm = () => {
             Zaloguj się
           </Button>
         </FormikProvider>
-        <Text mt="30px">
+        <Text mt="30px" d="flex">
           Nie masz jeszcze konta?
-          <Link
-            href="register"
-            color={useColorModeValue(colors.primary, colors.dark.primary)}
-          >
-            Zarejestruj się
+          <Link to="/register">
+            <Text
+              ml="10px"
+              color={useColorModeValue(colors.primary, colors.dark.primary)}
+            >
+              Zarejestruj się{" "}
+            </Text>
           </Link>
         </Text>
       </Box>

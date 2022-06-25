@@ -12,7 +12,6 @@ import {
   useBreakpointValue,
   useDisclosure,
   useColorMode,
-  Link,
   Container,
 } from "@chakra-ui/react";
 import {
@@ -26,8 +25,11 @@ import {
 import colors from "../../theme/base/colors";
 import { useAuth } from "contexts/AuthContext";
 import CustomMenu from "components/CustomMenu/CustomMenu";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const { isOpen, onToggle } = useDisclosure();
   // @ts-ignore
   const { currentUser } = useAuth();
@@ -74,13 +76,14 @@ const Header = () => {
             align="center"
           >
             <Text
+              textDecoration="none"
               textAlign={useBreakpointValue({ base: "center", md: "left" })}
               fontFamily={"heading"}
               fontSize="3xl"
               fontWeight="bold"
               color={backgroundColor}
             >
-              Snoozly
+              <Link to="/">Snoozly</Link>
             </Text>
 
             <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -96,9 +99,9 @@ const Header = () => {
             spacing="6"
           >
             {currentUser && (
-              <Button as={Link} href="/tasks">
+              <Link to="/tasks">
                 <TimeIcon />
-              </Button>
+              </Link>
             )}
 
             <Button onClick={toggleColorMode}>
@@ -110,17 +113,14 @@ const Header = () => {
               <>
                 {" "}
                 <Button
-                  as={Link}
                   fontSize={"sm"}
                   fontWeight={400}
                   variant={"link"}
-                  href={"login"}
+                  onClick={() => navigate("/login")}
                 >
                   Zaloguj się
                 </Button>
                 <Button
-                  as={Link}
-                  href="register"
                   display={{ base: "none", md: "inline-flex" }}
                   fontSize={"sm"}
                   fontWeight={600}
@@ -129,6 +129,7 @@ const Header = () => {
                   _hover={{
                     bg: "orange.300",
                   }}
+                  onClick={() => navigate("/register")}
                 >
                   Zarejestruj Się
                 </Button>
@@ -157,9 +158,10 @@ const DesktopNav = () => {
             <Popover trigger={"hover"} placement={"bottom-start"}>
               {
                 <Popover trigger="hover">
-                  <Link
+                  <Text
+                    as={Link}
                     p="2"
-                    href={navItem.href ?? "#"}
+                    to={navItem.href ?? "#"}
                     fontSize="20"
                     fontWeight={500}
                     color={linkColor}
@@ -169,7 +171,7 @@ const DesktopNav = () => {
                     }}
                   >
                     {navItem.label}
-                  </Link>
+                  </Text>
                 </Popover>
               }
             </Popover>
@@ -201,8 +203,6 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
         py="2"
-        as={Link}
-        href={href ?? "#"}
         justify={"space-between"}
         align={"center"}
         _hover={{
@@ -237,7 +237,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         >
           {children &&
             children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
+              <Link key={child.label} to={`${child.href}`}>
                 {child.label}
               </Link>
             ))}
@@ -257,14 +257,10 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Strona Główna",
-    href: "#",
+    href: "/",
   },
   {
     label: "O pomodoro",
-    href: "#",
-  },
-  {
-    label: "Referencje",
     href: "#",
   },
   {

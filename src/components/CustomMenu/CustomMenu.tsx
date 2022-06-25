@@ -1,6 +1,5 @@
 import {
   Button,
-  Link,
   Menu,
   MenuButton,
   MenuDivider,
@@ -11,6 +10,7 @@ import {
 import React from "react";
 import { FaUser } from "react-icons/fa";
 import { signOut } from "services/auth/login";
+import { Link } from "react-router-dom";
 
 const CustomMenu = () => {
   return (
@@ -20,7 +20,7 @@ const CustomMenu = () => {
       </MenuButton>
       <MenuList>
         <MenuGroup title="Profil">
-          <MenuItem as={Link} href="/panel">
+          <MenuItem as={Link} to="/panel">
             Moje konto
           </MenuItem>
           <MenuItem>Zadania</MenuItem>
