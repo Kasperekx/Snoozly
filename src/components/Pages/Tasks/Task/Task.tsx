@@ -34,8 +34,8 @@ export default function Todo({ task }) {
     });
     setIsEdited(!isEdited);
   };
+
   const handleChange = (e: any) => {
-    //e.preventDefault();
     if (task.completed === true) {
       setNewTitle(task.task);
     } else {
@@ -70,7 +70,7 @@ export default function Todo({ task }) {
           aria-label="Ukończone"
           icon={!task.completed ? <CheckCircleIcon /> : <CloseIcon />}
           onClick={completeTodo}
-          disabled={task.task == ""}
+          disabled={task.task === ""}
         />
         <IconButton
           aria-label="Edytuj"
