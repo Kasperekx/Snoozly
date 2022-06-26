@@ -14,10 +14,10 @@ const Tasks = () => {
         justifyContent="space-around"
         alignItems="center"
       >
-        <Box mt="200px">
+        <Box mt="200px" width={"40%"}>
           <Timer />
         </Box>
-        <Box mt="200px">
+        <Box mt="200px" width={"60%"}>
           <TaskList />
         </Box>
       </Container>

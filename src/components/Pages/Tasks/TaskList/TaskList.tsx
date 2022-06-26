@@ -1,6 +1,7 @@
 import { Box, Button, Heading, Input, List, ListItem } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { db } from "services/auth/config";
+import Task from "../Task/Task";
 
 import {
   addDoc,
@@ -9,6 +10,7 @@ import {
   query,
   doc,
   deleteDoc,
+  updateDoc,
 } from "firebase/firestore";
 import { DeleteIcon } from "@chakra-ui/icons";
 
@@ -27,16 +29,17 @@ const TaskList = () => {
     }
   };
 
-  const handleDelete = async (id: string) => {
-    await deleteDoc(doc(db, "tasks", id));
-  };
-
   useEffect(() => {
     const q = query(collection(db, "tasks"));
     const unsub = onSnapshot(q, (querySnapshot) => {
       let tasksArray: any = [];
       querySnapshot.forEach((doc) => {
-        tasksArray.push({ ...doc.data(), id: doc.id });
+        tasksArray.push({
+          ...doc.data(),
+          id: doc.id,
+          title: doc.data(),
+          // completed: false,
+        });
       });
       setTasks(tasksArray);
     });
@@ -70,10 +73,7 @@ const TaskList = () => {
                 alignItems="center"
                 padding="10px 15px"
               >
-                {item.task}
-                <Button onClick={() => handleDelete(item.id)}>
-                  <DeleteIcon />
-                </Button>
+                <Task task={item} />
               </Box>
             </ListItem>
           ))}
