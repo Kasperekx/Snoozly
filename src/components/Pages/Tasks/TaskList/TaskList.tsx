@@ -3,16 +3,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "services/auth/config";
 import Task from "../Task/Task";
 
-import {
-  addDoc,
-  collection,
-  onSnapshot,
-  query,
-  doc,
-  deleteDoc,
-  updateDoc,
-} from "firebase/firestore";
-import { DeleteIcon } from "@chakra-ui/icons";
+import { addDoc, collection, onSnapshot, query } from "firebase/firestore";
 
 const TaskList = () => {
   const [task, setTask] = useState("");
